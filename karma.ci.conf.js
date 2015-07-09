@@ -17,12 +17,12 @@ module.exports = function(config) {
 
   // Browsers to run on Sauce Labs
   var customLaunchers = {
-    "SL_Android_4.0": {
-      base: "SauceLabs",
-      browserName: "Android",
-      platform: "Linux",
-      version: "4.0"
-    },
+    // "SL_Android_4.0": {
+    //   base: "SauceLabs",
+    //   browserName: "Android",
+    //   platform: "Linux",
+    //   version: "4.0"
+    // },
     // "SL_Android_4.1": {
     //   base: "SauceLabs",
     //   browserName: "Android",
@@ -59,11 +59,11 @@ module.exports = function(config) {
     //   platform: "Linux",
     //   version: "5.1"
     // },
-    // "SL_Chrome": {
-    //   base: "SauceLabs",
-    //   browserName: "Chrome",
-    //   platform: "Windows 8.1"
-    // },
+    "SL_Chrome": {
+      base: "SauceLabs",
+      browserName: "Chrome",
+      platform: "Windows 8.1"
+    },
     // "SL_Chrome_Linux": {
     //   base: "SauceLabs",
     //   browserName: "Chrome",
@@ -212,7 +212,7 @@ module.exports = function(config) {
     // test results reporter to use
     // possible values: 'dots', 'progress'
     // available reporters: https://npmjs.org/browse/keyword/karma-reporter
-    reporters: ['dots', 'saucelabs'],
+    reporters: ['progress'],
 
 
     // web server port
@@ -235,12 +235,12 @@ module.exports = function(config) {
     captureTimeout: 120000,
     browserNoActivityTimeout: 0,
 
-    customLaunchers: customLaunchers,
+    //customLaunchers: customLaunchers,
 
     // start these browsers
     // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
-    browsers: Object.keys(customLaunchers),
-
+    //browsers: Object.keys(customLaunchers),
+    browsers: ['Firefox'],
 
     // Continuous Integration mode
     // if true, Karma captures browsers, runs the tests and exits
@@ -250,16 +250,16 @@ module.exports = function(config) {
   if (process.env.TRAVIS)    {
     label = "TRAVIS #" + process.env.TRAVIS_BUILD_NUMBER + " (" + process.env.TRAVIS_BUILD_ID + ")";
 
-    config.captureTimeout = 0;
-    // config.logLevel = config.LOG_DEBUG;
-    config.transports = [
-      "websocket"
-    ];
-
-    config.sauceLabs.build = label;
-    config.sauceLabs.startConnect = false;
-    config.sauceLabs.recordScreenshots = true;
-    config.sauceLabs.tunnelIdentifier = process.env.TRAVIS_JOB_NUMBER;
-    config.sauceLabs.testName = "Aurelia Logger CI";
+    // config.captureTimeout = 0;
+    // // config.logLevel = config.LOG_DEBUG;
+    // config.transports = [
+    //   "websocket"
+    // ];
+    //
+    // config.sauceLabs.build = label;
+    // config.sauceLabs.startConnect = false;
+    // config.sauceLabs.recordScreenshots = true;
+    // config.sauceLabs.tunnelIdentifier = process.env.TRAVIS_JOB_NUMBER;
+    // config.sauceLabs.testName = "Aurelia Logger CI";
   }
 };
