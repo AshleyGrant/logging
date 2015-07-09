@@ -10,7 +10,6 @@ before_install:
 before_script:
 - jspm install
 script:
-- gulp build
 - ./node_modules/karma/bin/karma start --browsers Firefox --single-run
 notifications:
   webhooks:
