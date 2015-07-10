@@ -51,7 +51,6 @@
     "karma-jspm": "^1.1.5",
     "karma-sauce-launcher": "^0.2.11",
     "object.assign": "^1.0.3",
-    "phantomjs": "^1.9.17",
     "require-dir": "^0.1.0",
     "run-sequence": "^1.0.2",
     "vinyl-paths": "^1.0.0",
