@@ -10,7 +10,7 @@ before_install:
 before_script:
 - jspm install
 script:
-- gulp test
+- gulp test-ci
 notifications:
   webhooks:
     urls:
